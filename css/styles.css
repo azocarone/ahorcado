@@ -1,0 +1,131 @@
+@import url('fonts.css');
+
+html {
+    font-size: 16px;
+}
+
+/*  */
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background: #F3F5FC;
+}
+
+/*  HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    margin: 40px 84px 40px 84px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #343A40;
+    opacity: 0.8;
+    margin-right: 84px;
+}
+
+header button {
+    margin-right: 84px;
+}
+
+/*  MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+main canvas {
+    display: none;
+}
+
+#estado {
+    width: 588px;
+    height: 360px;
+}
+
+.box-guiones {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.guion {
+    width: 80px;
+    height: 92px;
+    border-bottom: 5px solid black;
+}
+
+#faltas {
+    width: 264px;
+    height: 36px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+button {
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #0A3871;
+    text-align: center;
+    transition: 1s;
+    cursor: pointer;
+}
+
+#btn-iniciar {
+    width: 317px;
+    height: 114px;
+    border-radius: 24px;
+
+}
+
+#btn-recargar {
+    display: none;
+    width: 144px;
+    height: 32px;
+    border-radius: 12px;
+}
+
+#btn-iniciar:hover,
+#btn-recargar:hover {
+    background: #072B61;
+    transform: scale(1.1);
+}
+
+/*  FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    background: #343A40;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    height: 32px;
+    padding: 24px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #FFFFFF;
+}
