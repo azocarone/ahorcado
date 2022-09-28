@@ -174,7 +174,7 @@ function checkLetra(aSecretos, aErrores, letra) {
         * Verificar si la letra presionada está dentro de la palabra secreta:
 
         - En el caso de estar la letra en la palabra secreta, llamar a la función: dibujar letra correcta;
-        - Por el contrio, al no ser la letra parte de la palabra secreta, se de invocar
+        - Por el contrario, al no ser la letra parte de la palabra secreta, se de invocar
           la función: dibujar letra incorrecta.
     */
 
