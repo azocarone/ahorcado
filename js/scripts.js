@@ -103,7 +103,7 @@ async function createGuiones(aSecretos) {
     /*
         * Mostrar guiones para la palabra secreta: 
 
-        - Dinuja las lineas que serán los guiones para la palabra secreta;
+        - Dibuja las lineas que serán los guiones para la palabra secreta;
         - Conecta con la función "Crear palabra secreta".
     */
 
