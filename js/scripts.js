@@ -109,8 +109,8 @@ async function createGuiones(aSecretos) {
 
     let index = 0;
 
-    for (const letra of 'PRIVILEGIO') { // ? Para no bloqueaar la API
-        // for (const letra of await getPalabra()) { // ! Validar caracteres especiales.
+    // for (const letra of 'PRIVILEGIO') { // ? Para no bloqueaar la API
+    for (const letra of await getPalabra()) { // ! Validar caracteres especiales.
         aSecretos.push(letra);
         const elem = document.createElement('canvas');
         elem.id = `guion-${index++}`;
