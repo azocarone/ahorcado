@@ -2,6 +2,10 @@
 
 ## Juego del Ahorcado
 
+<p align="center">
+    <img width="600" heigth="600" src="https://github.com/azocarone/challenge-one-portafolio/blob/main/img/ahorcado_print.png">
+</p>
+
 **Requisitos:**
 
 - Debe funcionar solo con letras mayúsculas;
