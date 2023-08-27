@@ -1,0 +1,57 @@
+/* Variables para colores "modo light" */
+
+:root {
+  --color-background: #f3f5fc;
+  --color-text: black;
+  --color-textarea: #0a3871;
+  --color-info: #495057;
+  --color-background-hover: #eff1fa;
+  --color-rectangle-background: #ffffff;
+  --color-error: #343a40;
+}
+
+/* Variables para colores "modo dark" */
+
+/*@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1a1a1a;
+    --color-text: #ffffff;
+    --color-textarea: #ffffff;
+    --color-info: #c7c7c7;
+    --color-background-hover: #3c3c3c;
+    --color-rectangle-background: #252525;
+    --color-error: #ffffff;
+  }
+}*/
+
+/* Estilos para dispositivos móviles */
+
+@media screen and (max-width: 767px) {
+  :root {
+    font-size: calc(8px + 0.5vw);
+  }
+}
+
+/* Estilos para tabletas */
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  :root {
+    font-size: calc(10px + 0.5vw);
+  }
+}
+
+/* Estilos para dispositivos de escritorio */
+
+@media screen and (min-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+/* Otros Estilos comunes */
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}

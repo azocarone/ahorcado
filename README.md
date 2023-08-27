@@ -1,9 +1,9 @@
-# Challenge ONE G3 Sprint 2 | Principiante en programación
+# Juego del Ahorcado
 
-## Juego del Ahorcado
+**Challenge ONE G3 | Principiante en programación - Sprint 2**
 
 <p align="center">
-    <img width="600" heigth="600" src="https://github.com/azocarone/challenge-one-portafolio/blob/main/img/ahorcado_print.png">
+    <img width="600" heigth="600" src="#">
 </p>
 
 **Requisitos:**
@@ -17,8 +17,4 @@
 - No debe ser posible escribir números dentro del juego.
 - Las letras equivocadas deben aparecer en la pantalla, pero no pueden aparecer de forma repetida;
 - Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta en relación a la palabra.
-
-**Extras:**
-
-- ~~La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, e un botón "Agregar palabra".~~
 

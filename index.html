@@ -2,36 +2,74 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge ONE - Juego del Ahorcado</title>
-    <meta name="author" content="José AZÓCAR">
-    <meta name="description" content="Challenge ONE - Juego del Ahorcado">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego del Ahorcado</title>
+  <meta name="description" content="Challenge ONE G3 | Principiante en programación - Sprint 2" />
+  <meta name="author" content="José AZÓCAR" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/icons/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/img/icons/favicon.png" />
+
+  <!-- "Google Fonts": Inter -->
+  <!-- Regular 400; Bold 700 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Referencias CSS -->
+  <link rel="stylesheet" href="assets/css/normalize.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/common.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
 </head>
 
 <body>
-    <header>
-        <img src="img/logo.svg" alt="Logo Alura">
-        <h1>Ёḷ Äḧöṛċäḋö</h1>
-        <button id="btn-recargar">Recargar juego</button>
-    </header>
-    <main>
-        <canvas id="estado"></canvas>
-        <div class="box-guiones"></div>
-        <canvas id="faltas"></canvas>
-        <button id="btn-iniciar">Iniciar juego</button>
-    </main>
-    <footer>
-        <div>
-            <img src="img/azocarone.svg" alt="Logo azocarONE - José AZÓCAR">
-            <p>© 2022 azocarONE - José AZÓCAR</p>
-        </div>
-        <p>Challenge ONE G3 Sprint 2 | Principiante en programación</p>
-        <img src="img/logo_oracleAlura-es.svg" alt="Logo Oracle + Alura Latam">
-    </footer>
-    <script src="js/scripts.js"></script>
+  <header class="header">
+    <img class="header__logo" src="assets/img/logos/logo.svg" alt="Logo Alura" />
+  </header>
+
+  <main class="main">
+    <section class="main__game">
+      <canvas class="main__game-drawing"></canvas>
+      <div class="main__game-word"></div>
+      <div class="main__game-wrong"></div>
+    </section>
+    <section class="main__control">
+      <div class="main__control-info">
+        <img class="main__info-icon" src="assets/img/icons/exclamation.svg" alt="Icono exclamación" />
+        <p class="main__info-text">Solo letras mayúsculas y sin caracteres especiales.</p>
+      </div>
+      <div class="main__control-keypad">
+        <button class="main__keypad-btn main__keypad-btn--new-game" onclick="btnNewGame()">Nuevo juego</button>
+        <button class="main__keypad-btn main__keypad-btn--desist main__keypad-btn--disabled"
+          onclick="btnDesist()">Desistir</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h2 class="footer__title">Juego del Ahorcado</h2>
+    <section class="footer__credits">
+      <img class="footer__credits-logo" src="assets/img/logos/logo_oracleAlura-es.svg"
+        alt="Logo Oracle + Alura Latam" />
+      <p class="footer__credits-text">
+        Challenge ONE G3 | Principiante en programación - Sprint 2
+      </p>
+    </section>
+    <section class="footer__copyright">
+      <p class="footer__copyright-text">
+        © 2022-2023 José AZÓCAR (azocarone)
+      </p>
+      <img class="footer__copyright-logo" src="assets/img/logos/azocarone.svg" alt="Logo José AZÓCAR (azocarone)" />
+    </section>
+  </footer>
+
+  <script src="./assets/js/canvas.js" type="module"></script>
 </body>
 
 </html>

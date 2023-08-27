@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem;
+  height: 100vh;
+}
+
+.main__game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__game-drawing {
+  width: 287px;
+  height: 351px;
+  flex-shrink: 0
+}
+
+.main__control-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main__info-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.main__info-text {
+  font-size: 0.75rem;
+  color: var(--color-info);
+  opacity: 0.8;
+}
+
+.main__control-keypad {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.main__keypad-btn {
+  width: 100%;
+  height: 4.1875rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.main__keypad-btn--new-game {
+  background: #0a3871;
+  color: #ffffff;
+}
+
+.main__keypad-btn--new-game:hover {
+  background: #072b61;
+}
+
+.main__keypad-btn--desist {
+  box-sizing: border-box;
+  border: 0.0625rem solid #0a3871;
+  color: #0a3871;
+}
+
+.main__keypad-btn--desist:hover {
+  background: var(--color-background-hover);
+}
+
+.main__keypad-btn--disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Estilos para tabletas */
+
+@media screen and (min-width: 768px) {
+  .main__game-drawing {
+    width: 294px;
+    height: 360px;
+  }
+    
+  .main__control-keypad {
+    flex-direction: row;
+  }
+}
+
+/* Estilos para dispositivos de escritorio */
+
+@media screen and (min-width: 1024px) {
+}
