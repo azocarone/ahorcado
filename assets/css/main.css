@@ -17,6 +17,21 @@
   flex-shrink: 0
 }
 
+.main__game-word {
+  display: flex;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #0A3871;
+}
+
+.main__game-word-letter{
+  width: 48px;
+  padding-bottom: 16px;
+  border-bottom: solid;
+  text-align: center;
+}
+
 .main__control-info {
   display: flex;
   align-items: center;

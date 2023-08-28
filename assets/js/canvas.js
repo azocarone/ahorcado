@@ -1,5 +1,5 @@
 import { handleResize } from "./resize.js";
-import { figuras } from "./figuras.js";
+import { figuras } from "./figures.js";
 
 // Obtener el elemento canvas y su contexto 2D
 const canvas = document.querySelector(".main__game-drawing");
