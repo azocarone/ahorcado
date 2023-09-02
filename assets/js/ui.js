@@ -21,6 +21,7 @@ export function resizeCanvas(totalFiguras) {
   mainGameDrawing.style.height = height + "px";
 
   ctx.lineWidth = 5;
+  ctx.strokeStyle = "#0a3871";
 
   // Ajustar el contexto para la alta resolución
   ctx.scale(ratio, ratio);
@@ -35,7 +36,7 @@ function reShowFiguras(totalFiguras) {
   }
 }
 
-function showFigura(index) {
+export function showFigura(index) {
   ctx.beginPath();
   figuras[index](ctx);
   ctx.stroke();
@@ -63,7 +64,8 @@ export function showLetrasIncorrectas(letrasErradas) {
   mainGameWrong.textContent = letrasErradasSinRepetir;
 }
 
-export function inicializarTextos() {
+export function initializeGame() {
+  resizeCanvas(0);
   mainGameWord.textContent = "";
   mainGameWrong.textContent = "";
   showMensaje("inicial");

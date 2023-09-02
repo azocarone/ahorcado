@@ -1,11 +1,12 @@
-import { btnNewGame } from "./main.js";
+import { btnNewGame, btnDesist } from "./main.js";
 import { getPalabra } from "./word.js";
 import {
+  showFigura,
   showDashes,
   showLetraCorrecta,
   showLetrasIncorrectas,
-  inicializarTextos,
-  showMensaje
+  initializeGame,
+  showMensaje,
 } from "./ui.js";
 
 export let letrasErradas = [];
@@ -14,12 +15,22 @@ const maxFaltas = 6;
 
 export async function newGame() {
   letrasErradas = [];
-  inicializarTextos();
+  initializeGame();
   btnNewGame.classList.toggle("main__keypad-btn--disabled");
   palabraSecreta = await getPalabra();
   showDashes(palabraSecreta);
   document.addEventListener("keydown", checkTecla);
-};
+  btnDesist.classList.toggle("main__keypad-btn--disabled");
+  btnDesist.addEventListener("click", desist);
+}
+
+function desist() {
+  document.removeEventListener("keydown", checkTecla);
+  document.removeEventListener("click", desist);
+  showMensaje("desiste");
+  btnDesist.classList.toggle("main__keypad-btn--disabled");
+  btnNewGame.classList.toggle("main__keypad-btn--disabled");
+}
 
 function checkTecla(evento) {
   const teclaPresionada = evento.key.toUpperCase();
@@ -46,6 +57,7 @@ function checkLetra(letra) {
     indices.forEach((index) => showLetraCorrecta(index, letra));
   } else {
     letrasErradas.push(letra);
+    showFigura(letrasErradas.length);
     showLetrasIncorrectas(letrasErradas);
   }
 }
@@ -61,5 +73,6 @@ function checkStatus() {
     document.removeEventListener("keydown", checkTecla);
     showMensaje(maxFaltasAlcanzadas ? "condenado" : "absuelto");
     btnNewGame.classList.toggle("main__keypad-btn--disabled");
+    btnDesist.classList.toggle("main__keypad-btn--disabled");
   }
 }
