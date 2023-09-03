@@ -1,5 +1,5 @@
-import { figuras } from "./figures.js";
-import { mensaje } from "./messages.js";
+import { figuras } from "../assets/js/ahorcadoFigures.js";
+import { mensaje } from "../assets/js/gameMessages.js";
 
 const mainGameDrawing = document.querySelector(".main__game-drawing");
 const mainGameWord = document.querySelector(".main__game-word");
