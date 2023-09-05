@@ -2,7 +2,7 @@ const centerX = 259;
 const centerY = 244;
 
 /**
- * Matriz de funciones que definen las partes de la figura.
+ * Matriz de funciones que definen las partes de la figuras.
  */
 export const figuras = [
   // Horca

@@ -1,3 +1,6 @@
+/**
+ * Objeto que definen los diferentes mensajes del juego.
+ */
 export const mensaje = {
     inicial: "Solo letras mayúsculas y sin caracteres especiales.",
     desiste: "Desististe de jugar..",

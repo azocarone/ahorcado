@@ -1,26 +1,43 @@
+// Importación de módulos
 import { resizeCanvas } from "./views/ui.js";
 import * as game from "./controllers/game.js";
 
+// Declaración de constantes
 export const btnNewGame = document.querySelector(".main__keypad-btn--new-game");
 export const btnDesist = document.querySelector(".main__keypad-btn--desist");
 
-const gameData = {
-  maxFaltas: 6,
-  palabraSecreta: [],
-  letrasErradas: [],
-  keydownEventListener: (event) => {
-    game.checkTecla(event, gameData);
+// Declaración de la clase GameData
+class GameData {
+  constructor() {
+    this.maxFaltas = 6;
+    this.palabraSecreta = [];
+    this._letrasErradas = [];
+    this.keydownEventListener = this.keydownEventListener.bind(this);
   }
-};
 
-// Dibuja en el canvas la figura de la horca.
+  get letrasErradas() {
+    return this._letrasErradas;
+  }
+
+  get totalFiguras() {
+    return this._letrasErradas.length;
+  }
+
+  keydownEventListener(event) {
+    game.checkTecla(event, this);
+  }
+}
+
+// Creación de una instancia de la clase GameData
+const gameData = new GameData();
+
+// Event Listeners
 window.addEventListener("load", () => {
-  resizeCanvas(gameData.letrasErradas.length);
+  resizeCanvas(gameData.totalFiguras);
 });
 
-// Re-dibuja los elementos del canvas ya graficados
 window.addEventListener("resize", () => {
-  resizeCanvas(gameData.letrasErradas.length);
+  resizeCanvas(gameData.totalFiguras);
 });
 
 btnNewGame.addEventListener("click", () => {
@@ -28,5 +45,5 @@ btnNewGame.addEventListener("click", () => {
 });
 
 btnDesist.addEventListener("click", () => {
-  game.desist(gameData);
+  game.desist(gameData.keydownEventListener);
 });

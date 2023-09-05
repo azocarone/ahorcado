@@ -64,8 +64,8 @@ export function showLetrasIncorrectas(letrasErradas) {
   mainGameWrong.textContent = letrasErradasSinRepetir;
 }
 
-export function initializeGame() {
-  resizeCanvas(0);
+export function inicializaPantalla(totalFiguras) {
+  resizeCanvas(totalFiguras);
   mainGameWord.textContent = "";
   mainGameWrong.textContent = "";
   showMensaje("inicial");

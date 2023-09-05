@@ -4,15 +4,15 @@ import * as ui from "../views/ui.js";
 
 export async function newGame(gameData) {
   gameData.letrasErradas.length = 0; // Vaciar el array en lugar de crear uno nuevo
-  ui.initializeGame();
+  ui.inicializaPantalla(gameData.totalFiguras);
   habilitarBotones(false, true);
   gameData.palabraSecreta = await getPalabra();
   ui.showDashes(gameData.palabraSecreta);
   document.addEventListener("keydown", gameData.keydownEventListener);
 }
 
-export function desist(gameData) {
-  document.removeEventListener("keydown", gameData.keydownEventListener);
+export function desist(keydownEventListener) {
+  document.removeEventListener("keydown", keydownEventListener);
   habilitarBotones(true, false);
   ui.showMensaje("desiste");
 }
@@ -42,13 +42,16 @@ function checkLetra(letra, gameData) {
     indices.forEach((index) => ui.showLetraCorrecta(index, letra));
   } else {
     gameData.letrasErradas.push(letra);
-    ui.showFigura(gameData.letrasErradas.length);
+    ui.showFigura(gameData.totalFiguras);
     ui.showLetrasIncorrectas(gameData.letrasErradas);
   }
 }
 
 function checkStatus(gameData) {
-  const numFaltas = gameData.letrasErradas.length;
+  const numFaltas = gameData.totalFiguras;
+  
+  //console.log(numFaltas);
+  
   const todasLetrasAcertadas = gameData.palabraSecreta.every(
     (valores) => valores === undefined
   );
