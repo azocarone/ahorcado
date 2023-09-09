@@ -1,49 +1,20 @@
-// Importación de módulos
-import { resizeCanvas } from "./views/ui.js";
-import * as game from "./controllers/game.js";
+import { Game } from "./controllers/Game.js";
+import { btnNewGame, btnDesistir } from "./views/gameIU.js";
 
-// Declaración de constantes
-export const btnNewGame = document.querySelector(".main__keypad-btn--new-game");
-export const btnDesist = document.querySelector(".main__keypad-btn--desist");
+const game = new Game();
 
-// Declaración de la clase GameData
-class GameData {
-  constructor() {
-    this.maxFaltas = 6;
-    this.palabraSecreta = [];
-    this._letrasErradas = [];
-    this.keydownEventListener = this.keydownEventListener.bind(this);
-  }
-
-  get letrasErradas() {
-    return this._letrasErradas;
-  }
-
-  get totalFiguras() {
-    return this._letrasErradas.length;
-  }
-
-  keydownEventListener(event) {
-    game.checkTecla(event, this);
-  }
-}
-
-// Creación de una instancia de la clase GameData
-const gameData = new GameData();
-
-// Event Listeners
 window.addEventListener("load", () => {
-  resizeCanvas(gameData.totalFiguras);
+  game.resizeCanvas();
 });
 
 window.addEventListener("resize", () => {
-  resizeCanvas(gameData.totalFiguras);
+  game.resizeCanvas();
 });
 
 btnNewGame.addEventListener("click", () => {
-  game.newGame(gameData);
+  game.newGame();
 });
 
-btnDesist.addEventListener("click", () => {
-  game.desist(gameData.keydownEventListener);
+btnDesistir.addEventListener("click", () => {
+  game.desistir();
 });

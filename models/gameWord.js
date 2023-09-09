@@ -1,14 +1,14 @@
-export async function getPalabra(longitud) {
-  const palabra = longitud >= 5 ? await consumeAPI(longitud) : 'LINUX';
+export const getPalabra = async (longitud) => {
+  const palabra = longitud >= 5 ? await getAPI(longitud) : "LINUX";
   return Array.from(palabra);
-}
+};
 
 /**
  * Lógica para emplear la API: "Palabra Pública al Azar".
  * https://clientes.api.greenborn.com.ar/public-random-word?c=9&l=8
  * c: número de palabras a generar; l: longitud de la palabra.
  */
-async function consumeAPI(longitud) {
+const getAPI = async (longitud) => {
   try {
     const response = await fetch(
       `https://clientes.api.greenborn.com.ar/public-random-word?c=1&l=${longitud}`
@@ -19,4 +19,4 @@ async function consumeAPI(longitud) {
   } catch (err) {
     throw new Error(`Error al obtener la palabra: ${err}`);
   }
-}
+};
