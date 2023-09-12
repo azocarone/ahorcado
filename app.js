@@ -1,14 +1,14 @@
 import { Game } from "./controllers/Game.js";
-import { btnNewGame, btnDesistir } from "./views/gameIU.js";
+import { btnNewGame, btnDesistir } from "./views/iu.js";
 
 const game = new Game();
 
 window.addEventListener("load", () => {
-  game.resizeCanvas();
+  game.sizeCanvas();
 });
 
 window.addEventListener("resize", () => {
-  game.resizeCanvas();
+  game.sizeCanvas();
 });
 
 btnNewGame.addEventListener("click", () => {

@@ -1,11 +1,29 @@
-import { getPalabra } from "../models/gameWord.js";
-import * as ui from "../views/gameIU.js";
+import { getPalabra } from "../models/word.js";
+import * as ui from "../views/iu.js";
 
 export class Game {
   constructor() {
     this.maxFaltas = 6;
-    this.palabraSecreta = [];
+
+    this.secreto = {
+      longitud: {
+        corta: {
+          minAncho: 287,
+          letras: 4, //5
+        },
+        larga: {
+          minAncho: 294,
+          letras: 4, //8
+        },
+      },
+      palabra: [],
+    };
+
+    this.secretoCorto = this.secreto.longitud.corta;
+    this.secretoLargo = this.secreto.longitud.larga;
+
     this.letrasErradas = [];
+
     this.keydownEventListener = this.keydownEventListener.bind(this);
   }
 
@@ -13,18 +31,16 @@ export class Game {
     return this.letrasErradas.length;
   }
 
-  resizeCanvas() {
+  sizeCanvas() {
     const mainGameDrawing = ui.mainGameDrawing;
     const ratio = ui.ratio;
     const ctx = ui.ctx;
     const width = mainGameDrawing.clientWidth;
     const height = mainGameDrawing.clientHeight;
 
-    // Ajustar el tamaño del canvas en píxeles y en CSS
+    // Ajustar el tamaño del canvas en píxeles
     mainGameDrawing.width = width * ratio;
     mainGameDrawing.height = height * ratio;
-    mainGameDrawing.style.width = width + "px";
-    mainGameDrawing.style.height = height + "px";
 
     ctx.lineWidth = 5;
     ctx.strokeStyle = "#0a3871";
@@ -33,24 +49,32 @@ export class Game {
     ctx.scale(ratio, ratio);
 
     // Volver a dibujar las figuras en el canvas después de redimensionarlo
-    this.reShowFiguras(this.getTotalFiguras);
+    this.updateFiguras(this.getTotalFiguras);
   }
 
-  reShowFiguras(totalFiguras) {
+  updateFiguras(totalFiguras) {
     for (let figuraNumero = 0; figuraNumero <= totalFiguras; figuraNumero++) {
       ui.showFigura(figuraNumero);
     }
   }
 
   async newGame() {
-    this.palabraSecreta = await getPalabra();
+    const canvasWidth = ui.mainGameDrawing.width;
+    
+    this.secreto.palabra = await getPalabra(this.obtenerLongitudPalabra(canvasWidth));
     this.letrasErradas.length = 0;
-    this.resizeCanvas();
+    this.sizeCanvas();
     ui.limpiaLetras();
-    ui.showDashes(this.palabraSecreta);
+    ui.showDashes(this.secreto.palabra);
     ui.showMensaje("inicial");
     ui.habilitarBotones(false, true);
     document.addEventListener("keydown", this.keydownEventListener);
+  }
+
+  obtenerLongitudPalabra(canvasWidth) {
+    return canvasWidth >= this.secretoLargo.minAncho
+      ? this.secretoLargo.letras
+      : this.secretoCorto.letras;
   }
 
   desistir() {
@@ -90,10 +114,10 @@ export class Game {
   buscarLetra(letra) {
     const indices = [];
 
-    this.palabraSecreta.forEach((secreto, index) => {
+    this.secreto.palabra.forEach((secreto, index) => {
       if (secreto === letra) {
         indices.push(index);
-        this.palabraSecreta[index] = undefined;
+        this.secreto.palabra[index] = undefined;
       }
     });
 
@@ -102,7 +126,7 @@ export class Game {
 
   checkStatusJuego() {
     const numFaltas = this.getTotalFiguras;
-    const todasLetrasAcertadas = this.palabraSecreta.every(
+    const todasLetrasAcertadas = this.secreto.palabra.every(
       (valores) => valores === undefined
     );
     const maxFaltasAlcanzadas = numFaltas === this.maxFaltas;

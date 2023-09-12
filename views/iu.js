@@ -1,4 +1,4 @@
-import { getFigura } from "./gameFigures.js";
+import { getFigura } from "./figures.js";
 
 export const mainGameDrawing = document.querySelector(".main__game-drawing");
 const mainGameWord = document.querySelector(".main__game-word");
