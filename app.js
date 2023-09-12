@@ -12,6 +12,7 @@ window.addEventListener("resize", () => {
 });
 
 btnNewGame.addEventListener("click", () => {
+  document.body.focus();
   game.newGame();
 });
 

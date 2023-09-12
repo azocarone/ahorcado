@@ -69,7 +69,6 @@ export class Game {
     ui.showMensaje("inicial");
     ui.habilitarBotones(false, true);
     document.addEventListener("keydown", this.keydownEventListener);
-    document.body.focus();
   }
 
   obtenerLongitudPalabra(canvasWidth) {
