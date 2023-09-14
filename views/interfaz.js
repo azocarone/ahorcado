@@ -1,11 +1,11 @@
-import { getFigura } from "./figures.js";
+import { figuras } from "./figuras.js";
 
 export const mainGameDrawing = document.querySelector(".main__game-drawing");
 const mainGameWord = document.querySelector(".main__game-word");
 const mainGameWrong = document.querySelector(".main__game-wrong");
 const mainInfoText = document.querySelector(".main__info-text");
 export const btnNewGame = document.querySelector(".main__keypad-btn--new-game");
-export const btnDesistir = document.querySelector(".main__keypad-btn--desist");
+export const btnDesist = document.querySelector(".main__keypad-btn--desist");
 
 export const ctx = mainGameDrawing.getContext("2d");
 
@@ -19,13 +19,13 @@ const mensaje = {
   absuelto: "Ganaste, felicidades.",
 };
 
-export function showFigura(figura) {
+export function mostrarFigura(figura) {
   ctx.beginPath();
-  getFigura[figura](ctx);
+  figuras[figura](ctx);
   ctx.stroke();
 }
 
-export function showDashes(palabraSecreta) {
+export function mostrarGuiones(palabraSecreta) {
   palabraSecreta.forEach((_, indice) => {
     const elemento = document.createElement("li");
 
@@ -36,28 +36,28 @@ export function showDashes(palabraSecreta) {
   });
 }
 
-export function showLetraCorrecta(index, letra) {
+export function mostrarLetraCorrecta(index, letra) {
   const letraCorrecta = document.getElementById(`dash-${index}`);
 
   letraCorrecta.textContent = letra;
 }
 
-export function showLetrasIncorrectas(letrasErradas) {
+export function mostrarLetrasIncorrectas(letrasErradas) {
   const letrasErradasSinRepetir = [...new Set(letrasErradas)].join(", ");
 
   mainGameWrong.textContent = letrasErradasSinRepetir;
 }
 
-export function limpiaLetras() {
+export function limpiarLetras() {
   mainGameWord.textContent = "";
   mainGameWrong.textContent = "";
 }
 
-export function showMensaje(titulo) {
+export function mostrarMensaje(titulo) {
   mainInfoText.textContent = mensaje[titulo];
 }
 
 export function habilitarBotones(newGameEnabled, desistirEnabled) {
   btnNewGame.classList.toggle("main__keypad-btn--disabled", !newGameEnabled);
-  btnDesistir.classList.toggle("main__keypad-btn--disabled", !desistirEnabled);
+  btnDesist.classList.toggle("main__keypad-btn--disabled", !desistirEnabled);
 }

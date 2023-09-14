@@ -1,21 +1,20 @@
-import { Game } from "./controllers/Game.js";
-import { btnNewGame, btnDesistir } from "./views/iu.js";
+import { JuegoAhorcado } from "./controllers/JuegoAhorcado.js";
+import { btnNewGame, btnDesist } from "./views/interfaz.js";
 
-const game = new Game();
+const juego = new JuegoAhorcado();
 
 window.addEventListener("load", () => {
-  game.sizeCanvas();
+  juego.configurarCanvas();
 });
 
 window.addEventListener("resize", () => {
-  game.sizeCanvas();
+  juego.configurarCanvas();
 });
 
 btnNewGame.addEventListener("click", () => {
-  document.body.focus();
-  game.newGame();
+  juego.iniciar();
 });
 
-btnDesistir.addEventListener("click", () => {
-  game.desistir();
+btnDesist.addEventListener("click", () => {
+  juego.desistir();
 });

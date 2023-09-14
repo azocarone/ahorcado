@@ -7,7 +7,7 @@
 
 .main__game {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   flex-direction: column;
   align-items: center;
 }
@@ -20,21 +20,22 @@
 
 .main__game-word {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .main__game-word-letter {
-  width: 48px;
-  padding-bottom: 16px;
+  width: 3rem;
+  padding-bottom: 1rem;
   border-bottom: solid;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #0a3871;
   text-align: center;
+
 }
 
 .main__game-wrong {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #495057;
  
