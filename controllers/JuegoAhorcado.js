@@ -7,10 +7,10 @@ export class JuegoAhorcado {
 
     this.secreto = {
       corto: {
-        letras: 5,
+        letras: 4, //5
       },
       largo: {
-        letras: 8,
+        letras: 4, //8
       },
       palabra: [],
     };
