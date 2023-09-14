@@ -1,10 +1,17 @@
 .header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem 2.5rem 0 2.5rem;
 }
 
 .header__logo {
   width: 1.94rem;
   height: 3rem;
-  margin: 2.5rem 0 0 2.5rem;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #0a3871;
 }

@@ -1,14 +1,14 @@
 const centro = {
   x: 259,
-  y: 244,
+  y: 236,
 };
 
 const horca = (ctx) => {
   const lineas = [
     [-259, 113, 35, 113],
-    [-177, 113, -177, -241],
-    [-177, -241, 0, -241],
-    [0, -241, 0, -194],
+    [-197, 113, -197, -221],
+    [-197, -219, -20, -219],
+    [-20, -221, -20, -195],
   ];
 
   lineas.forEach(([x1, y1, x2, y2]) => {
@@ -17,27 +17,27 @@ const horca = (ctx) => {
 };
 
 const cabeza = (ctx) => {
-  dibujarCirculo(ctx, 0, -166, 31);
+  dibujarCirculo(ctx, -20, -166, 31);
 };
 
 const tronco = (ctx) => {
-  dibujarLinea(ctx, 0, -135, 0, 0);
+  dibujarLinea(ctx, -20, -135, -20, -20);
 };
 
 const brazoDerecho = (ctx) => {
-  dibujarLinea(ctx, 0, -115, 31, -63);
+  dibujarLinea(ctx, -20, -115, 11, -63);
 };
 
 const brazoIzquierdo = (ctx) => {
-  dibujarLinea(ctx, 0, -115, -31, -63);
+  dibujarLinea(ctx, -20, -115, -51, -63);
 };
 
 const piernaDerecha = (ctx) => {
-  dibujarLinea(ctx, 0, 0, 31, 72);
+  dibujarLinea(ctx, -20, -20, 11, 62);
 };
 
 const piernaIzquierda = (ctx) => {
-  dibujarLinea(ctx, 0, 0, -31, 72);
+  dibujarLinea(ctx, -20, -20, -51, 62);
 };
 
 const dibujarLinea = (ctx, x1, y1, x2, y2) => {
