@@ -1,5 +1,5 @@
 export const obtenerPalabra = async (longitud) => {
-  const palabra = longitud >= 5 ? await generarPalabra(longitud) : "LINUX";
+  const palabra = longitud >= 5 ? await generarPalabra(longitud) : "GNULINUX";
   return Array.from(palabra);
 };
 
