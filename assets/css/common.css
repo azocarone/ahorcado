@@ -1,28 +1,9 @@
-/* Variables para colores "modo light" */
-
 :root {
   --color-background: #f3f5fc;
   --color-text: black;
-  --color-textarea: #0a3871;
-  --color-info: #495057;
+  --color-notice: #495057;
   --color-background-hover: #eff1fa;
-  --color-rectangle-background: #ffffff;
-  --color-error: #343a40;
 }
-
-/* Variables para colores "modo dark" */
-
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #1a1a1a;
-    --color-text: #ffffff;
-    --color-textarea: #ffffff;
-    --color-info: #c7c7c7;
-    --color-background-hover: #3c3c3c;
-    --color-rectangle-background: #252525;
-    --color-error: #ffffff;
-  }
-}*/
 
 /* Estilos para dispositivos móviles */
 
@@ -52,6 +33,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--color-background);
   color: var(--color-text);
+  background: var(--color-background);
 }

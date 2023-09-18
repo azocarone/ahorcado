@@ -32,34 +32,32 @@
   font-weight: 400;
   color: #0a3871;
   text-align: center;
-
 }
 
 .main__game-wrong {
   font-size: 1.5rem;
   font-weight: 400;
   color: #495057;
- 
 }
 
 .main__control {
   width: 100%;
 }
 
-.main__control-info {
+.main__control-notice {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.main__info-icon {
+.main__notice-icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.main__info-text {
+.main__notice-text {
   font-size: 0.85rem;
-  color: var(--color-info);
+  color: var(--color-notice);
   opacity: 0.8;
 }
 

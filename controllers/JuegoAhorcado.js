@@ -34,7 +34,7 @@ export class JuegoAhorcado {
     this.configurarCanvas();
     ui.limpiarLetras();
     ui.mostrarGuiones(this.secreto.palabra);
-    ui.mostrarMensaje("inicial");
+    ui.mostrarNotificacion("inicial");
     ui.habilitarBotones(false, true);
     document.addEventListener("keydown", this.keydownEventListener);
   }
@@ -73,7 +73,7 @@ export class JuegoAhorcado {
   }
 
   desistir() {
-    ui.mostrarMensaje("desiste");
+    ui.mostrarNotificacion("desiste");
     ui.habilitarBotones(true, false);
     document.removeEventListener("keydown", this.keydownEventListener);
   }
@@ -89,7 +89,7 @@ export class JuegoAhorcado {
       this.procesarLetra(teclaPresionada);
       this.evaluarEstatusJuego();
     } else {
-      ui.mostrarMensaje("advertencia");
+      ui.mostrarNotificacion("advertencia");
     }
   }
 
@@ -127,7 +127,7 @@ export class JuegoAhorcado {
 
     if (todasLetrasAcertadas || maxFaltasAlcanzadas) {
       document.removeEventListener("keydown", this.keydownEventListener);
-      ui.mostrarMensaje(maxFaltasAlcanzadas ? "condenado" : "absuelto");
+      ui.mostrarNotificacion(maxFaltasAlcanzadas ? "condenado" : "absuelto");
       ui.habilitarBotones(true, false);
     }
   }
