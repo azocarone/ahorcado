@@ -1,12 +1,16 @@
 # Juego del Ahorcado
 
+**José AZÓCAR**
+
+*Ing. en Informática / Computer Engr | Data Science | Dev Trainee/Junior*
+
 **Challenge ONE G3 | Principiante en programación - Sprint 2**
 
 <p align="center">
     <img width="600" heigth="600" src="#">
 </p>
 
-**Requisitos:**
+## Requisitos
 
 - Debe funcionar solo con letras mayúsculas;
 - No deben ser utilizadas letras con acentos ni caracteres especiales;
@@ -17,4 +21,3 @@
 - No debe ser posible escribir números dentro del juego.
 - Las letras equivocadas deben aparecer en la pantalla, pero no pueden aparecer de forma repetida;
 - Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta en relación a la palabra.
-
