@@ -1,11 +1,5 @@
 # Juego del Ahorcado
 
-**Challenge ONE G3 | Principiante en programación - Sprint 2**
-
-**José AZÓCAR**
-
-*Ing. en Informática / Computer Engr | Data Science | Dev Trainee/Junior*
-
 <p align="center">
     <img width="600" heigth="600" src="https://github.com/azocarone/ahorcado-challenge-one/blob/main/assets/img/projects/ahorcado.png">
 </p>
